@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/gridLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="25dp"
+    android:layout_marginTop="50dp"
+    android:columnCount="4"
+    android:rowCount="5"
+    android:backgroundTint="#2196F3"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/display"
+        android:layout_width="365dp"
+        android:layout_height="115dp"
+        android:layout_row="0"
+        android:textSize="40dp"
+        android:text="0"
+        android:padding="10dp"
+        android:layout_column="0"
+        android:layout_columnSpan="4" />
+    <Button
+        android:id="@+id/one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:layout_column="0"
+        android:layout_row="1"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="358dp" />
+
+    <Button
+        android:id="@+id/two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2"
+        android:layout_column="1"
+        android:layout_row="1"
+        tools:layout_editor_absoluteX="208dp"
+        tools:layout_editor_absoluteY="358dp" />
+
+    <Button
+        android:id="@+id/three"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3"
+        android:layout_column="2"
+        android:layout_row="1"
+        tools:layout_editor_absoluteX="117dp"
+        tools:layout_editor_absoluteY="358dp" />
+
+    <Button
+        android:id="@+id/plus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+"
+        android:layout_column="3"
+        android:layout_row="1"
+        tools:layout_editor_absoluteX="299dp"
+        tools:layout_editor_absoluteY="358dp" />
+
+    <Button
+        android:id="@+id/four"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4"
+        android:layout_column="0"
+        android:layout_row="2"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="417dp" />
+
+    <Button
+        android:id="@+id/five"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5"
+        android:layout_row="2"
+        android:layout_column="1"
+        tools:layout_editor_absoluteX="114dp"
+        tools:layout_editor_absoluteY="417dp" />
+
+    <Button
+        android:id="@+id/six"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="6"
+        android:layout_row="2"
+        android:layout_column="2"
+        tools:layout_editor_absoluteX="213dp"
+        tools:layout_editor_absoluteY="420dp" />
+
+    <Button
+        android:id="@+id/minus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="-"
+        android:layout_row="2"
+        android:layout_column="3"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="420dp" />
+
+    <Button
+        android:id="@+id/seven"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="7"
+        android:layout_row="3"
+        android:layout_column="0"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="479dp" />
+
+    <Button
+        android:id="@+id/eight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="8"
+        android:layout_row="3"
+        android:layout_column="1"
+        tools:layout_editor_absoluteX="122dp"
+        tools:layout_editor_absoluteY="479dp" />
+
+    <Button
+        android:id="@+id/nine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="9"
+        android:layout_row="3"
+        android:layout_column="2"
+        tools:layout_editor_absoluteX="213dp"
+        tools:layout_editor_absoluteY="479dp" />
+
+    <Button
+        android:id="@+id/multiply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="x"
+        android:layout_row="3"
+        android:layout_column="3"
+        tools:layout_editor_absoluteX="305dp"
+        tools:layout_editor_absoluteY="479dp" />
+
+    <Button
+        android:id="@+id/zero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:layout_row="4"
+        android:layout_column="0"
+        tools:layout_editor_absoluteX="29dp"
+        tools:layout_editor_absoluteY="540dp" />
+
+    <Button
+        android:id="@+id/divide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="\"
+        android:layout_row="4"
+        android:layout_column="1"
+        tools:layout_editor_absoluteX="120dp"
+        tools:layout_editor_absoluteY="540dp" />
+
+    <Button
+        android:id="@+id/equals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="="
+        android:layout_row="4"
+        android:layout_column="2"
+        tools:layout_editor_absoluteX="211dp"
+        tools:layout_editor_absoluteY="540dp" />
+
+    <Button
+        android:id="@+id/clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CLR"
+        android:layout_row="4"
+        android:layout_column="3"
+        tools:layout_editor_absoluteX="306dp"
+        tools:layout_editor_absoluteY="540dp" />
+
+
+</GridLayout>
