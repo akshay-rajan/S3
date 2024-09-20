@@ -28,7 +28,7 @@ class Solution {
                 arr[j] = tmp;
             }
         }
-        // Since i and j have crossed, j is at the pivot position, hence we swap arr[j] and pivot
+        // Since i and j have crossed, j (and i) is at the pivot position, hence we swap arr[j] and pivot
         // All elements to the left of j is <= pivot and all after j is > pivot
         arr[low] = arr[j];
         arr[j] = pivot;
