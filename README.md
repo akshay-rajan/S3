@@ -1,7 +1,7 @@
-# [Data Science](./DS#README.md)
+# [Data Science](./DS#readme)
 
-# [Mobile Application Development](./MAD#README.md)
+# [Mobile Application Development](./MAD#readme)
 
 ---
 
-# [Design and Analysis of Algorithms](./DAA#README.md)
+# [Design and Analysis of Algorithms](./DAA#readme)
