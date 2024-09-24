@@ -18,8 +18,9 @@ PRIMS(graph):
     Choose an arbitrary starting vertex and mark it as visited
     
     while there are unvisited nodes in the graph:
-        for each visited node in the graph:
-            Find the MINIMUM edge E from a visited node to an unvisited node
+        for each visited node v in the graph:
+            Find the MINIMUM edge E from a visited node to an unvisited node u
+            Mark u as visited
             if Adding E to MST does not form a cycle in MST:
                 Add E to MST
     return MST
