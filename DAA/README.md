@@ -29,7 +29,8 @@ PRIMS(graph):
 KRUSKALS(graph):
     Initialize an empty graph MST
     while number of edges in MST < n - 1:
-        Choose the edge E in MST with MINIMUM cost
+        Choose an unvisited edge E in MST with MINIMUM cost
+        Mark E as visited
         if Adding E to MST does not form a cycle in MST:
             Add E to MST
     return MST
