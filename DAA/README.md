@@ -8,14 +8,8 @@ DivideAndConquer(P):
         return Solution(P)
     else:
         Divide P into smaller instances P1, P2, ...Pk
-        for each instance Pi of P:
-            DivideAndConquer(Pi)
-        return Combine(
-            DivideAndConquer(P1),
-            DivideAndConquer(P2),
-            ...
-            DivideAndConquer(Pk)
-        )
+        Apply DivideAndConquer() to each of these subproblems
+        return Combine(DivideAndConquer(P1),...,DivideAndConquer(Pk))
 ```
 
 ### 1. Merge Sort
@@ -26,6 +20,35 @@ MERGESORT(arr, low, high):
         mid = (low + high) / 2
         MERGESORT(arr, low, mid)
         MERGESORT(arr, mid + 1, high)
+        MERGE(arr, low, mid, high)
+MERGE(arr, low, mid, high):
+    Initialize a new array 'temp'
+    index = 0
+    left = low
+    right = high
+    while left <= mid and right <= high:
+        if arr[left] <= arr[right]:
+            % Pick from the left
+            temp[index] = arr[left]
+            left = left + 1
+        else:
+            % Pick from the right
+            temp[index] = arr[right]
+            right = right + 1
+        index = index + 1
+    % If the left half is not fully taken into temp
+    while left <= mid:
+        temp[index] = arr[left]
+        left = left + 1
+        index = index + 1
+    % If the right half is not fully taken
+    while right <= high:
+        temp[index] = arr[right]
+        right = right + 1
+        index = index + 1
+    % Replace Elements in the original array with 'temp'
+    for i from low to high:
+        arr[i] = temp[i - low]
 ```
 
 ### 2. Quick Sort
