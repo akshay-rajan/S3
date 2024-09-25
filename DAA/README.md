@@ -27,7 +27,7 @@ PARTITION(arr, low, high):
             i = i + 1
         while arr[j] > pivot and j > low:
             % Move the right pointer
-            i = i + 1 
+            j = j - 1 
         if i < j:
             % Found two values that are in the wrong partitions
             SWAP(arr[i], arr[j])
