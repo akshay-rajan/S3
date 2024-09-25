@@ -2,9 +2,30 @@
 
 ## Divide and Conquer
 
+```prolog
+DivideAndConquer(P):
+    if Small(P):
+        return Solution(P)
+    else:
+        Divide P into smaller instances P1, P2, ...Pk
+        for each instance Pi of P:
+            DivideAndConquer(Pi)
+        return Combine(
+            DivideAndConquer(P1),
+            DivideAndConquer(P2),
+            ...
+            DivideAndConquer(Pk)
+        )
+```
+
 ### 1. Merge Sort
 
-```c
+```prolog
+MERGESORT(arr, low, high):
+    if low < high:
+        mid = (low + high) / 2
+        MERGESORT(arr, low, mid)
+        MERGESORT(arr, mid + 1, high)
 ```
 
 ### 2. Quick Sort
@@ -12,9 +33,9 @@
 ```prolog
 QUICKSORT(arr, low, high):
     if low < high:
-        pivot = PARTITION(arr, low, high)
-        QUICKSORT(arr, low, pivot - 1)
-        QUICKSORT(arr, pivot + 1, high)
+        p = PARTITION(arr, low, high)
+        QUICKSORT(arr, low, p - 1)
+        QUICKSORT(arr, p + 1, high)
 
 PARTITION(arr, low, high):
     % Set the first value as the pivot
@@ -33,7 +54,7 @@ PARTITION(arr, low, high):
             SWAP(arr[i], arr[j])
     % Swap the pivot with element at the found pivot position
     SWAP(arr[low], arr[j])
-    % Return the pivot
+    % Return the pivot position
     return j            
 ```
 
