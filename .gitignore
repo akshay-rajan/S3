@@ -1,4 +1,4 @@
 *.class
 *.pdf
 venv/
-.ipynb_checkpoints/
+DS/.ipynb_checkpoints/
