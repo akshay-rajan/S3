@@ -52,12 +52,12 @@ They are interactive components that users can interact with.
 Common Widgets include:
 
 - **Button**
-- **TextView**: Displays text
-- **EditText**: Text input field
-- **ImageView**: Displays an image
+- **TextView**: Displays text.
+- **EditText**: Text input field.
+- **ImageView**: Displays an image.
 - **CheckBox**
 - **RadioButton**
-- **ProgressBar**: Displays a progress indicator
+- **ProgressBar**
 
 Layouts are containers that define the structure for a UI in an app. They hold widgets and other layouts, arranging them on the screen according to specific rules.
 Common Layouts include:
@@ -68,7 +68,21 @@ Common Layouts include:
 - **FrameLayout**: A simple layout that can hold one child view, making it useful for displaying a single item.
 - **GridLayout**: Arranges its children in a grid.
 
+![hierarchy](./others/android_class_hierarchy_view.svg)
 
+Layouts are a type of ViewGroup.
+**ViewGroup** is a subclass of View that can contain other Views. 
+It acts as a container for other views.
+**View** is the simplest UI component in Android. Widgets are a specific type of View.
+
+
+Class Hierarchy in Java:
+```mermaid
+graph LR;
+    Object-->View;
+    View-->ViewGroup;
+    View-->Widgets;    
+```
 
 <!-- ## 2. Layouts -->
 
