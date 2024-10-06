@@ -84,6 +84,17 @@ graph LR;
     View-->Widgets;    
 ```
 
+> To build the app as an **APK**, go to *Build -> Build App Bundles / APKs -> Build APKs*
+
+### Toast
+
+A Toast provides simple feedback about an operation in a small popup. 
+It only fills the amount of space required for the message and the current activity remains visible and interactive.
+
+```java
+Toast.makeText(getApplicationContext(), "Hello, World!", Toast.LENGTH_SHORT).show();
+```
+
 <!-- ## 2. Layouts -->
 
 <!-- ## 3. Activity -->
