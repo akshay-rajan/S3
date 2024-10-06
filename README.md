@@ -21,4 +21,4 @@
 
 # [Design and Analysis of Algorithms](./DAA#readme)
 
-# [Deep Learning](./DL#readme)
+# [Deep Learning](./DL)
