@@ -2,8 +2,8 @@
 
 # [Mobile Application Development](./MAD#readme)
 
-1. [Login Page](./MAD/login)
-2. Simple Calculator
+1. [Login Page](./MAD/login/)
+2. [Simple Calculator](./MAD/calculator/)
 3. Intent 
 4. Activity Lifecycle
 <!-- 3. Counter App
