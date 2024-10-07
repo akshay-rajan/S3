@@ -78,9 +78,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (first == null || second == null) return;
                 first = calculate(first, second, op);
+                if (first == null) {
+                    display.setText("ERROR");
+                } else {
+                    display.setText(first);
+                }
                 second = null;
                 op = null;
-                display.setText(first);
             }
         });
 
@@ -140,10 +144,10 @@ public class MainActivity extends AppCompatActivity {
     }
     // Perform the calculation
     public String calculate(String first, String second, String op) {
-        int f = Integer.parseInt(first);
-        int s = Integer.parseInt(second);
+        long f = Long.parseLong(first);
+        long s = Long.parseLong(second);
 
-        int ans = 0;
+        long ans = 0;
         switch (op) {
             case "+":
                 ans = f + s;
@@ -151,13 +155,14 @@ public class MainActivity extends AppCompatActivity {
             case "-":
                 ans = f - s;
                 break;
-            case "X":
+            case "×": // (U+00D7)
                 ans = f * s;
                 break;
-            case "/":
+            case "÷": // (U+00F7)
+                if (s == 0) return null;
                 ans = f / s;
                 break;
         }
-        return Integer.toString(ans);
+        return Long.toString(ans);
     }
 }
