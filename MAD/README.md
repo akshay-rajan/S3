@@ -100,6 +100,10 @@ Toast.makeText(getApplicationContext(), "Hello, World!", Toast.LENGTH_SHORT).sho
 
 Shared Preferences is a local storage area used to store and retrieve primitive data.
 It is a light weight mechanism to store a known set of values like storing UI states (favourites, stars), user preferences (game level), application settings (themes) etc.
+We can create or modify shared preferences via `getSharedPreferences(key, mode)`.
+Modes include `public`, `private` and `append`.
+- `SharedPreferences.Editor` is used to write or edit data in the SP file.
+- `SharedPreferences.OnSharePreferenceChangeListener()`
 
 <!-- ## 2. Layouts -->
 
