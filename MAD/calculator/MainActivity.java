@@ -1,5 +1,6 @@
 package com.example.calculator;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -42,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         equals = (Button) findViewById(R.id.equals);
         clear = (Button) findViewById(R.id.clear);
         back = (Button) findViewById(R.id.back);
+        dot = (Button) findViewById(R.id.dot);
 
         for (int i = 0; i < 10; i++) {
             digits[i] = (Button) findViewById(getResources().getIdentifier("b" + i, "id", getPackageName()));
@@ -104,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Clear the display and reset the calculator
+        // Handle click on AC
         clear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -112,6 +116,36 @@ public class MainActivity extends AppCompatActivity {
                 second = null;
                 op = null;
                 display.setText("0");
+            }
+        });
+
+        // Handle dot
+        dot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // If the number is empty, set it to '0.'
+                if (first == null && second == null) {
+                    first = "0.";
+                    display.setText(first);
+                }
+                // Check if a dot is already in the current number
+                if (display.getText().toString().indexOf('.') != -1) {
+                    // If the first number is entered and and an operator is pressed, enter a 0
+                    if (first != null && op != null) {
+                        second = "0.";
+                        display.setText(second);
+                    }
+                    return;
+                }
+                if (first != null && second == null) {
+                    // If the first number is currently on display
+                    first += ".";
+                    display.setText(first);
+                } else if (first != null) {
+                    // If the second number is currently on display
+                    second += ".";
+                    display.setText(second);
+                }
             }
         });
 
@@ -142,12 +176,13 @@ public class MainActivity extends AppCompatActivity {
             });
         }
     }
+
     // Perform the calculation
     public String calculate(String first, String second, String op) {
-        long f = Long.parseLong(first);
-        long s = Long.parseLong(second);
+        double f = Double.parseDouble(first);
+        double s = Double.parseDouble(second);
 
-        long ans = 0;
+        double ans = 0;
         switch (op) {
             case "+":
                 ans = f + s;
@@ -163,6 +198,9 @@ public class MainActivity extends AppCompatActivity {
                 ans = f / s;
                 break;
         }
-        return Long.toString(ans);
+        // Format the answer to 9 decimal places
+        DecimalFormat decimalFormat = new DecimalFormat("#.#########");
+        decimalFormat.setDecimalSeparatorAlwaysShown(false); // Don't show decimal point if it's 0
+        return decimalFormat.format(ans);
     }
 }
