@@ -95,6 +95,12 @@ It only fills the amount of space required for the message and the current activ
 Toast.makeText(getApplicationContext(), "Hello, World!", Toast.LENGTH_SHORT).show();
 ```
 
+
+### Shared Preferences
+
+Shared Preferences is a local storage area used to store and retrieve primitive data.
+It is a light weight mechanism to store a known set of values like storing UI states (favourites, stars), user preferences (game level), application settings (themes) etc.
+
 <!-- ## 2. Layouts -->
 
 <!-- ## 3. Activity -->
