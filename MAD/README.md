@@ -5,7 +5,7 @@ It provides a comprehensive suite of tools to help developers create, test and d
 
 Android Studio uses *Gradle* to manage the build process, packaging APKs etc.
 
-## 1. Getting Started
+## Getting Started
 
 **Android Studio** can be downloaded from the [official page](https://developer.android.com/studio/#downloads).
 
@@ -86,6 +86,33 @@ graph LR;
 
 > To build the app as an **APK**, go to *Build -> Build App Bundles / APKs -> Build APKs*
 
+
+## Features
+
+### GridLayout
+
+GridLayout is a layout manager that allows you to place child elements in a grid of rows and columns. 
+
+```xml
+<GridLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="2"
+    android:rowCount="3">
+    <!-- Child elements -->
+</GridLayout>
+```
+
+### Intent
+
+An Intent is an object that provides runtime binding between separate components, such as two activities.
+It is used to start another activity, start a service, deliver a broadcast, etc.
+
+```java
+Intent intent = new Intent(this, NextActivity.class);
+startActivity(intent);
+```
+
 ### Toast
 
 A Toast provides simple feedback about an operation in a small popup. 
@@ -95,15 +122,36 @@ It only fills the amount of space required for the message and the current activ
 Toast.makeText(getApplicationContext(), "Hello, World!", Toast.LENGTH_SHORT).show();
 ```
 
+### Spinner
+
+A Spinner is a widget that allows the user to select an item from a **dropdown list**.
+
+```java
+Spinner spinner = findViewById(R.id.spinner);
+ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.planets_array, android.R.layout.simple_spinner_item);
+adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+spinner.setAdapter(adapter);
+```
+
+### Activity Lifecycle
+
+>An activity is a fundamental component that manages the user interface and interactions of an application.
+
+An Activity in Android goes through different states during its lifetime. 
+These states are managed by the system and the developer can override the methods to handle these states.
+
+![lifecycle](./others/activity_lifecycle.png)
+
 
 ### Shared Preferences
 
-Shared Preferences is a local storage area used to store and retrieve primitive data.
+**Shared Preferences** is a local storage area used to store and retrieve primitive data.
 It is a light weight mechanism to store a known set of values like storing UI states (favourites, stars), user preferences (game level), application settings (themes) etc.
 We can create or modify shared preferences via `getSharedPreferences(key, mode)`.
 Modes include `public`, `private` and `append`.
 - `SharedPreferences.Editor` is used to write or edit data in the SP file.
-- `SharedPreferences.OnSharePreferenceChangeListener()`
+- `SharedPreferences.OnSharePreferenceChangeListener()` listens to changes in the shared preferences file.
+
 
 <!-- ## 2. Layouts -->
 
