@@ -99,10 +99,21 @@ public class MainActivity extends AppCompatActivity {
                 if (first != null && second == null) {
                     // If the first number is currently on display
                     first = first.substring(0, first.length() - 1);
+                    // If the number is fully deleted
+                    if (first.isEmpty()) {
+                        first = null;
+                        display.setText("0");
+                        return;
+                    }
                     display.setText(first);
                 } else if (first != null) {
                     // If the second number is currently on display
                     second = second.substring(0, second.length() - 1);
+                    if (second.isEmpty()) {
+                        second = null;
+                        display.setText("0");
+                        return;
+                    }
                     display.setText(second);
                 }
             }
