@@ -145,6 +145,22 @@ These states are managed by the system and the developer can override the method
 
 ![lifecycle](./others/activity_lifecycle.png)
 
+### Logs
+
+Logs are used to  print out messages that help the developer understand the flow of the code, to the log (*LogCat*).
+
+```java
+public class MainActivity extends AppCompatActivity {
+    private static final String TAG = "MainActivity"; // Common practice
+    // ...
+    Log.d(TAG, "Debug message");
+    Log.v(TAG, "Verbose message");
+    Log.i(TAG, "Info message");
+    Log.w(TAG, "Warning message");
+    Log.e(TAG, "Error message");
+    // ...
+}
+```
 
 ### Shared Preferences
 
