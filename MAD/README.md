@@ -105,11 +105,14 @@ GridLayout is a layout manager that allows you to place child elements in a grid
 
 ### Intent
 
-An Intent is an object that provides runtime binding between separate components, such as two activities.
-It is used to start another activity, start a service, deliver a broadcast, etc.
+An Intent provides binding between two components, such as two activities.
+
+> To create a new Activity inside our app, do *File -> New -> Activity*
+
+Intent is used to start another activity, start a service, deliver a broadcast, etc.
 
 ```java
-Intent intent = new Intent(this, NextActivity.class);
+Intent intent = new Intent(CurrentActivity.this, NextActivity.class);
 startActivity(intent);
 ```
 
