@@ -111,9 +111,48 @@ An Intent provides binding between two components, such as two activities.
 
 Intent is used to start another activity, start a service, deliver a broadcast, etc.
 
+#### 1. Explicit Intent
+
+Explicit intents specify the component **in the same app** to start, by name (of the class).
+
 ```java
 Intent intent = new Intent(CurrentActivity.this, NextActivity.class);
+intent.putExtra("key", "value"); // Passing data to the next component
 startActivity(intent);
+```
+```java
+// Accessing the passed data
+Intent intent = getIntent();
+String value = intent.getStringExtra("key");
+```
+
+#### 2. Implicit Intent
+
+Implicit intents do not name a specific component but declare a general action to perform, which allows a component **from another app** to handle it.
+
+```java
+// Launch a browser to display a specified URL
+Intent intent = new Intent(Intent.ACTION_VIEW);
+intent.setData(Uri.parse("http://www.example.com"));
+startActivity(intent);
+
+// Dial a phone number
+Intent intent = new Intent(Intent.ACTION_DIAL);
+intent.setData(Uri.parse("tel:+123456789"));
+startActivity(intent);
+
+// Send an email
+Intent intent = new Intent(Intent.ACTION_SENDTO);
+intent.setData(Uri.parse("mailto:example@example.com"));
+intent.putExtra(Intent.EXTRA_SUBJECT, "Subject");
+intent.putExtra(Intent.EXTRA_TEXT, "Email body");
+startActivity(intent);
+
+// Share text content with other apps
+Intent intent = new Intent(Intent.ACTION_SEND);
+intent.setType("text/plain");
+intent.putExtra(Intent.EXTRA_TEXT, "This is the text to share.");
+startActivity(Intent.createChooser(intent, "Share via"));
 ```
 
 ### Toast
