@@ -2,10 +2,10 @@
 
 # [Mobile Application Development](./MAD#readme)
 
-1. [Login Page](./MAD/login)
-2. Simple Calculator
-3. Intent 
-4. Activity Lifecycle
+1. [Login Page](./MAD/login/)
+2. [Simple Calculator](./MAD/calculator/)
+3. [Intent](./MAD/intent/)
+4. [Activity Lifecycle](./MAD/activityLifeCycle/)
 <!-- 3. Counter App
 4. Checkbox
 5. Radio Button
