@@ -1,4 +1,4 @@
-# [Data Science](./DS#readme)
+# [Data Science Lab](./DS#readme)
 
 1. [Numpy](./DS/numpy.ipynb)
 2. [Matrix operations](./DS/matrix.ipynb)
@@ -13,7 +13,7 @@
 11. [SVM](./DS/support_vector_machines.ipynb)
 12. CNN
 
-# [Mobile Application Development](./MAD#readme)
+# [Mobile Application Development Lab](./MAD#readme)
 
 1. [Login Page (Toast)](./MAD/login/)
 2. [Simple Calculator](./MAD/calculator/)
