@@ -11,7 +11,7 @@
 9. [Linear Regression](./DS/linear_regression.ipynb)
 10. [K Means](./DS/kmeans.ipynb)
 11. [SVM](./DS/support_vector_machines.ipynb)
-12. CNN
+12. [CNN](./DS/cnn.ipynb)
 
 # [Mobile Application Development Lab](./MAD#readme)
 
