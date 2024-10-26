@@ -1,6 +1,6 @@
 # [Data Science](./DS#readme)
 
-1. Numpy
+1. [Numpy](./DS/numpy.ipynb)
 2. [Matrix operations](./DS/matrix.ipynb)
 3. [Matplotlib](./DS/matplotlib.ipynb)
 4. [Pandas](./DS/pandas.ipynb)
