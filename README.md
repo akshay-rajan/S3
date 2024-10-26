@@ -6,7 +6,7 @@
 4. [Pandas](./DS/pandas.ipynb)
 5. [KNN (Iris Dataset)](./DS/knn.ipynb)
 6. [KNN (Diabetes Dataset)](./DS/knn_2.ipynb)
-7. [Decision Tree](./DS/decisionTreeClassifier.ipynb)
+7. [Decision Tree](./DS/decision_tree.ipynb)
 8. [Naive Bayes](./DS/naive_bayes.ipynb)
 9. [Linear Regression](./DS/linear_regression.ipynb)
 10. [K Means](./DS/kmeans.ipynb)
