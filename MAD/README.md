@@ -211,6 +211,21 @@ To make multiple elements scrollabe, we need to put a layout inside `ScrollView`
 
 A ListView displays a list of items in a vertical, scrollable list.
 
+#### ArrayAdapter
+
+`ArrayAdapter` provides a binding from an array of data to views that are displayed within a `ListView`, `Spinner` etc.
+
+```java
+String[] countries = {"USA", "Canada", "Mexico", "UK", "Germany"};
+
+// Create the ArrayAdapter
+ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, countries);
+
+// Set the adapter to the listview
+ListView listView = findViewById(R.id.listView);
+listView.setAdapter(adapter);
+```
+
 ### Shared Preferences
 
 **Shared Preferences** is a local storage area used to store and retrieve primitive data.
