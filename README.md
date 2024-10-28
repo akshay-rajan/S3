@@ -23,7 +23,7 @@
 6. [Implicit Intent](./MAD/implicitIntent/)
 7. [List View & ArrayAdapter](./MAD/listview/)
 8. [Scroll View](./MAD/scrollview/)
-9. Spinner
+9. [Spinner](./MAD/spinner/)
 8. Shared Preferences
 
 ---
