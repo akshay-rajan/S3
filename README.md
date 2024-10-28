@@ -21,8 +21,8 @@
 4. [Activity Lifecycle](./MAD/activityLifeCycle/)
 5. [Radio Button and Checkbox](./MAD/radioCheckbox/)
 6. [Implicit Intent](./MAD/implicitIntent/)
-7. [List View](./MAD/listview/)
-8. Scroll View
+7. [List View & ArrayAdapter](./MAD/listview/)
+8. [Scroll View](./MAD/scrollview/)
 9. Spinner
 8. Shared Preferences
 
