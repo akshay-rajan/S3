@@ -201,19 +201,57 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
+### Scroll View
+
+A ScrollView is a special type of layout that allows its **only child** to be scrolled vertically.
+
+To make multiple elements scrollabe, we need to put a layout inside `ScrollView`, for example `LinearLayout`.
+
+### List View
+
+A ListView displays a list of items in a vertical, scrollable list.
+
 ### Shared Preferences
 
 **Shared Preferences** is a local storage area used to store and retrieve primitive data.
+
+Data is stored in XML files within the app's private storage.
+
 It is a light weight mechanism to store a known set of values like storing UI states (favourites, stars), user preferences (game level), application settings (themes) etc.
+
 We can create or modify shared preferences via `getSharedPreferences(key, mode)`.
-Modes include `public`, `private` and `append`.
+Modes include public (`MODE_PUBLIC`), private(`MODE_PRIVATE`) and append(`MODE_APPEND`).
 - `SharedPreferences.Editor` is used to write or edit data in the SP file.
 - `SharedPreferences.OnSharePreferenceChangeListener()` listens to changes in the shared preferences file.
 
+```java
+// Get the SharedPreferences instance
+SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
 
-<!-- ## 2. Layouts -->
+// Get the SharedPreferences.Editor instance
+SharedPreferences.Editor editor = sharedPreferences.edit();
 
-<!-- ## 3. Activity -->
+// Store data
+editor.putString("username", "JohnDoe");
+editor.putInt("userAge", 25);
+editor.putBoolean("isLoggedIn", true);
+
+// Commit the changes
+editor.apply(); // or editor.commit();
+```
+
+```java
+// Get the SharedPreferences instance
+SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+
+// Retrieve data
+String username = sharedPreferences.getString("username", "defaultName");
+int userAge = sharedPreferences.getInt("userAge", 0);
+boolean isLoggedIn = sharedPreferences.getBoolean("isLoggedIn", false);
+
+// Use the retrieved data
+```
+
 
 ---
 
