@@ -12,7 +12,7 @@ flowchart LR
     A --> F[**Applications**]
     B --> G(Memory Management, Security, Process Management etc.)
     C --> H(Support for Databases, Graphics, Media etc. e.g. SQLite, WebKit)
-    D --> I(Runtime Environment)
+    D --> I(Runtime Environment. A Java Virtual Machine designed for Android)
     E --> J(High-level services such as Activity Management, Window Management etc.)
     F --> K(User-Installed apps that run on top of the application framework)
 ```
