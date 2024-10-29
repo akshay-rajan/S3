@@ -1,4 +1,23 @@
-# Mobile Application Development Lab
+# Android
+
+Android is an open source operating system developed by Google, based on a modified version of linux kernel.
+
+The Android Architecture has 5 main components:
+```mermaid
+flowchart LR
+    A[Android Architecture] --> B[**Linux Kernel**]
+    A --> C[**Platform Libraries**]
+    A --> D[**Android Runtime**]
+    A --> E[**Application Framework**]
+    A --> F[**Applications**]
+    B --> G(Memory Management, Security, Process Management etc.)
+    C --> H(Support for Databases, Graphics, Media etc. e.g. SQLite, WebKit)
+    D --> I(Runtime Environment)
+    E --> J(High-level services such as Activity Management, Window Management etc.)
+    F --> K(User-Installed apps that run on top of the application framework)
+```
+
+# Android Studio
 
 Android Studio is the official IDE for Android OS, based on *JetBrains IntelliJ IDEA* software.
 It provides a comprehensive suite of tools to help developers create, test and debug Android applications.
