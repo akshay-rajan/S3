@@ -5,7 +5,7 @@ Android is an open source operating system developed by Google, based on a modif
 The Android Architecture has 5 main components:
 ```mermaid
 flowchart LR
-    A[Android Architecture] --> B[**Linux Kernel**]
+    A[**Android Architecture**] --> B[**Linux Kernel**]
     A --> C[**Platform Libraries**]
     A --> D[**Android Runtime**]
     A --> E[**Application Framework**]
@@ -202,6 +202,14 @@ An Activity in Android goes through different states during its lifetime.
 These states are managed by the system and the developer can override the methods to handle these states.
 
 ![lifecycle](./others/activity_lifecycle.png)
+
+- `onCreate()`: Activity is created.
+- `onStart()`: Activity becomes visible to the user.
+- `onResume()`: Activity starts interacting with the user.
+- `onPause()`: Activity goes into the background.
+- `onStop()`: Activity is no longer visible.
+- `onRestart()`: Activity is restarted from the stopped state.
+- `onDestroy()`: Called before the activity is destroyed.
 
 ### Logs
 
