@@ -17,6 +17,14 @@ flowchart LR
     F --> K(User-Installed apps that run on top of the application framework)
 ```
 
+Android Components | Purpose | Example
+--- | --- | --- |
+**Activities** | Represents a single screen with a UI. Handles user interactions, displays information and manages the application's visual elements. | A Login Screen, Settings Screen
+**Services** | Runs in the background to perform long-running operations without a UI. | Music Player service, Downloading files, Syncing data
+**Broadcast Recievers** | Responds to system-wide broadcast messages. Listens for events. | SMS alert, Battery level listeners
+**Content Providers** | Manages and shares structured data with other applications. Provides a consistent interface for accessing data stored in various formats (e.g. SQLite) | Contact app's content provider allows other apps to access contacts
+
+
 # Android Studio
 
 Android Studio is the official IDE for Android OS, based on *JetBrains IntelliJ IDEA* software.
