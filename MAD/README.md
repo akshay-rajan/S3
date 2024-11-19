@@ -197,8 +197,9 @@ A Spinner is a widget that allows the user to select an item from a **dropdown l
 
 ```java
 Spinner spinner = findViewById(R.id.spinner);
-ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.planets_array, android.R.layout.simple_spinner_item);
-adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+String[] planets = new String[] {"Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"};
+
+ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, planets);
 spinner.setAdapter(adapter);
 ```
 
