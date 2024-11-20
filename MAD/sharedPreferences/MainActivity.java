@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
             // Redirect to login activity
             Intent i = new Intent(this, MainActivity2.class);
             startActivity(i);
+            finish();
         }
         // Display the username, if credentials are found
         String msg = "Hello, " + username + "!";
@@ -57,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
             // Redirect to login activity
             Intent i = new Intent(this, MainActivity2.class);
             startActivity(i);
+            finish();
         });
 
     }

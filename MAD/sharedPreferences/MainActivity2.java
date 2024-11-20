@@ -1,5 +1,6 @@
 package com.example.sharedpreferences;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
@@ -46,6 +47,7 @@ public class MainActivity2 extends AppCompatActivity {
             editor.apply();
 
             // Redirect to main activity
+            startActivity(new Intent(this, MainActivity.class));
             finish();
         });
     }
