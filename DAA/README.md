@@ -134,3 +134,16 @@ Vertex-Cover(G(V, E)):
         Remove from E` every edge incident on either u or v
     return C
 ```
+
+## Randomized Algorithms
+
+### 1. Randomized Quick Sort
+
+```c
+Quicksort(A, s, t):
+   if s >= t: return
+   Pick pivot p randomly from {s, s+1, ..., t}
+   q = Partition(A, s, t, p)
+   Quicksort(A, s, q - 1)
+   Quicksort(A, q + 1, t)
+```
