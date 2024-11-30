@@ -24,10 +24,3 @@
 8. [Scroll View](./MAD/scrollview/)
 9. [Spinner](./MAD/spinner/)
 8. [Shared Preferences](./MAD/sharedPreferences/)
-
----
----
-
-# [Design and Analysis of Algorithms](./DAA#readme)
-
-# [Deep Learning](./DL)
