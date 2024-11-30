@@ -119,3 +119,18 @@ KRUSKALS(graph):
             Add E to MST
     return MST
 ```
+
+## Approximation Algorithms
+
+### 1. 2-approximation algorithm for Vertex Cover Problem
+
+```c
+Vertex-Cover(G(V, E)):
+    C = φ // Vertex cover
+    E` = E
+    while E` != φ:
+        Pick an edge {u, v} from `E`
+        C = C U {u, v} // Add the edge to the vertex cover
+        Remove from E` every edge incident on either u or v
+    return C
+```
