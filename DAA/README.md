@@ -168,6 +168,28 @@ KRUSKALS(graph):
     return MST
 ```
 
+## Dynamic Programming
+
+### 1. Floyd-Warshall Algorithm (All Pair Shortest Path)
+```c
+AllPaths(costs, n):
+    Initialize matrix A to store the paths 
+    A[i][j] is the shortest path from i to j
+    
+    for i:= 1 to n:
+        for j:= 1 to n:
+            A[i][j] = costs[i][j] // Copy the edge costs
+    
+    // For each intermediate vertex k
+    for k:= 1 to n do
+        // For each path {i, j}
+        for i:= 1 to n do
+            for j:= 1 to n do
+                // Update cost if {i, k} + {k, j} is less expensive
+                A[i][j] = min(A[i][j], A[i][k] + A[k][j])
+    return A
+```
+
 ## Approximation Algorithms
 
 ### 1. 2-approximation algorithm for Vertex Cover Problem
