@@ -84,30 +84,51 @@ PARTITION(arr, low, high):
 ### 3. Matrix Multiplication
 
 ```prolog
+% Assuming n is a power of 2
 MM(A, B, n):
-    % If the matrix is small (dimensions <= 2x2), directly multiply
-    If mat1 and mat2 are 1 x 1:
-        Return mat1[0][0] * mat2[0][0]
-    Else If mat1 and mat2 are 2 x 2:
-        Return SOLVE2BY2(mat1, mat2)
+    % If the matrixes are small (dimensions <= 2x2)
+    If n <= 2:
+        Return MULTIPLY(A, B, n)
     Else:
-        If the matrix dimensions is not a power of 2:
-            Fill 0s to make it a power of 2
         Divide A into 4 matrices [[a, b], [c, d]] of dimensions n/2 x n/2
         Divide B into 4 matrices [[e, f], [g, h]] of dimensions n/2 x n/2
+        % 8 multiplications, 4 Additions
         Return [
             [ADD(MM(a, e), MM(b, g)), ADD(MM(a, f), MM(b, h))],
             [ADD(MM(c, e), MM(d, g)), ADD(MM(c, f), MM(d, h))]
         ]  
 
 
-SOLVE2BY2(A[[a11, a12], [a21, a22]], B[[b11, b12], [c21, c22]]):
+MULTIPLY(A, B, n):
+    % If only one element in each matrix, just multiply them
+    If n == 1:
+        Return [[A[0][0] * B[0][0]]]
+    % For 2 x 2 matrices
     Return [
-        [a11 * b11 + a12 * b21, a11 * b12 + a12 * b22],
-        [a21 * b11 + a22 * b21, a21 * b12 + a22 * b22]
+        [A[0][0] * B[0][0] + A[0][1] * B[1][0], A[0][0] * B[0][1] + A[0][1] * B[1][1]],
+        [A[1][0] * B[0][0] + A[1][1] * B[1][0], A[1][0] * B[0][1] + A[1][1] * B[1][1]]
     ]
 ```
-
+```prolog
+STRASSENS(A, B, n):
+    If n <= 2:
+        Return MULTIPLY(A, B, n)
+    Else:
+        Divide A into 4 matrices [[a, b], [c, d]] of dimensions n/2 x n/2
+        Divide B into 4 matrices [[e, f], [g, h]] of dimensions n/2 x n/2
+        % 7 multiplications, 10 additions / subtractions
+        P = STRASSENS(ADD(a, d), ADD(e, h), n/2)
+        Q = STRASSENS(ADD(c, d), e, n/2)
+        R = STRASSENS(a, SUB(f, h), n/2)
+        S = STRASSENS(d, SUB(g, e), n/2)
+        T = STRASSENS(ADD(a, b), h, n/2)
+        U = STRASSENS(SUB(c, a), ADD(e, f), n/2)
+        V = STRASSENS(SUB(b, d), ADD(g, h), n/2)
+        Return [
+            [ADD(SUB(ADD(P, S), T), V), ADD(R, T)],
+            [ADD(Q, S), ADD(SUB(ADD(P, R), Q), U)]
+        ]
+```
 ## Greedy Method
 
 ```c
