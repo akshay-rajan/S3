@@ -102,12 +102,10 @@ MM(A, B, n):
 
 
 SOLVE2BY2(A[[a11, a12], [a21, a22]], B[[b11, b12], [c21, c22]]):
-    Initialize a 2 x 2 matrix 'product'
-    product[0][0] = a11 * b11 + a12 * b21
-    product[0][1] = a11 * b12 + a12 * b22
-    product[1][0] = a21 * b11 + a22 * b21
-    product[1][1] = a21 * b12 + a22 * b22
-    Return product
+    Return [
+        [a11 * b11 + a12 * b21, a11 * b12 + a12 * b22],
+        [a21 * b11 + a22 * b21, a21 * b12 + a22 * b22]
+    ]
 ```
 
 ## Greedy Method
