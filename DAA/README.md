@@ -25,7 +25,7 @@ MERGE(arr, low, mid, high):
     Initialize a new array 'temp'
     index = 0
     left = low
-    right = high
+    right = mid + 1
     while left <= mid and right <= high:
         if arr[left] <= arr[right]:
             % Pick from the left
