@@ -81,6 +81,35 @@ PARTITION(arr, low, high):
     return j            
 ```
 
+### 3. Matrix Multiplication
+
+```prolog
+MM(A, B, n):
+    % If the matrix is small (dimensions <= 2x2), directly multiply
+    If mat1 and mat2 are 1 x 1:
+        Return mat1[0][0] * mat2[0][0]
+    Else If mat1 and mat2 are 2 x 2:
+        Return SOLVE2BY2(mat1, mat2)
+    Else:
+        If the matrix dimensions is not a power of 2:
+            Fill 0s to make it a power of 2
+        Divide A into 4 matrices [[a, b], [c, d]] of dimensions n/2 x n/2
+        Divide B into 4 matrices [[e, f], [g, h]] of dimensions n/2 x n/2
+        Return [
+            [ADD(MM(a, e), MM(b, g)), ADD(MM(a, f), MM(b, h))],
+            [ADD(MM(c, e), MM(d, g)), ADD(MM(c, f), MM(d, h))]
+        ]  
+
+
+SOLVE2BY2(A[[a11, a12], [a21, a22]], B[[b11, b12], [c21, c22]]):
+    Initialize a 2 x 2 matrix 'product'
+    product[0][0] = a11 * b11 + a12 * b21
+    product[0][1] = a11 * b12 + a12 * b22
+    product[1][0] = a21 * b11 + a22 * b21
+    product[1][1] = a21 * b12 + a22 * b22
+    Return product
+```
+
 ## Greedy Method
 
 ```c
