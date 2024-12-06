@@ -168,6 +168,22 @@ KRUSKALS(graph):
     return MST
 ```
 
+### 3. Bellman-Ford Algorithm
+
+```c
+BELLMANFORD(graph, source):
+    Initialize distance[] to ∞ for all vertices. 
+    distance[source] = 0
+    for i from 1 to |V| - 1:
+        for each edge (u, v) with weight w in graph:
+            if distance[u] + w < distance[v]:
+                distance[v] = distance[u] + w
+    for each edge (u, v) with weight w in graph:
+        if distance[u] + w < distance[v]:
+            return "Negative weight cycle detected"
+    return distance
+```
+
 ## Dynamic Programming
 
 ### 1. Floyd-Warshall Algorithm (All Pair Shortest Path)
